@@ -144,7 +144,6 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  
   - Getting started:
     - Installation: getting-started.md
     - Create a new project: create.md
@@ -153,9 +152,9 @@ nav:
       - 導覽列樣式: route/navstyle.md
       - 參數的傳遞: route/param.md
     - Component:    
-        認識Component: component/component.md
-        生命週期: component/lifecycle.md
-        ng-content: component/ngcontent.md
+      - 認識Component: component/component.md
+      - 生命週期: component/lifecycle.md
+      - ng-content: component/ngcontent.md
 
 
 
