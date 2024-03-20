@@ -55,7 +55,7 @@ theme:
       accent: indigo
       toggle:
         icon: material/toggle-switch-off
-        name: Switch to system preference
+        name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
@@ -116,8 +116,8 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+      user: SeleneAi499123
+      repo: MkDocs
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
@@ -152,14 +152,8 @@ nav:
     - Philosophy: philosophy.md
     - Alternatives: alternatives.md
     - License: license.md
-    - Changelog:
-      - changelog/index.md
-      - How to upgrade: upgrade.md
+
 
   - More Info:
-    - info/index.md
     - Getting started: info/getting-started.md
-    - FAQ: info/faq/sponsoring.md
-    - Changelog:
-      - info/changelog/index.md
-      - How to upgrade: info/upgrade.md
+    - FAQ: info/sponsoring.md
