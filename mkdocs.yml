@@ -1,7 +1,7 @@
 # Project information
 site_name: 小艾的 MkDocs 網站
 # 之後修改成Gitlab page的網址
-# site_url: http://127.0.0.1:8000
+site_url: http://127.0.0.1:8000/
 site_author: Selene Ai
 site_description: 練習使用 Markdown 筆記，來記錄目前所學的Angular前端技術與程式相關的知識。
 
@@ -27,7 +27,10 @@ theme:
     # - navigation.expand
     - navigation.footer
     - navigation.indexes
-    # - navigation.instant
+
+    - navigation.instant
+    - navigation.instant.preview
+
     # - navigation.instant.prefetch
     # - navigation.instant.progress
     # - navigation.prune
@@ -59,9 +62,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
-  icon:
-    logo: logo
+  logo: assets/angular.png
+  favicon: assets/angular.png
 
 # Plugins
 plugins:
@@ -96,6 +98,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -143,17 +146,14 @@ nav:
   - Home: index.md
   - Getting started:
     - Installation: getting-started.md
-    - Creating your site: creating-your-site.md
-    - Publishing your site: publishing-your-site.md
-    - Customization: customization.md
-    - Conventions: conventions.md
-    - Browser support: browser-support.md
-    - Enterprise feedback: enterprise-support.md
-    - Philosophy: philosophy.md
-    - Alternatives: alternatives.md
-    - License: license.md
+    - Create a new project: create.md
+    - Route: 
+      - 什麼是Route: route/route.md
+      - 導覽列樣式: route/navstyle.md
+      - 參數的傳遞: route/param.md
 
 
-  - More Info:
-    - Getting started: info/getting-started.md
-    - FAQ: info/sponsoring.md
+
+  - Learn More:
+    - Getting started: more/getting-started.md
+    - FAQ: more/sponsoring.md
