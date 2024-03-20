@@ -61,7 +61,7 @@ export const routes: Routes = [
 
 ## 產生導覽列
 
-透過在網站的首頁新增導覽列，讓使用者可以更方便的瀏覽其他頁面，我們可以在用`*ngFor`產生路由清單，最後不要忘記加上`<router-outlet></router-outlet>`啟用Angular的Route功能。
+透過在網站的首頁新增導覽列，讓使用者可以更方便的瀏覽其他頁面，我們可以用`*ngFor`產生路由清單，最後不要忘記加上`<router-outlet></router-outlet>`啟用Angular的Route功能。
 
 ```html title="app.component.html"
 <ul>
