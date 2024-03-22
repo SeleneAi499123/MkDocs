@@ -13,7 +13,7 @@ MkDocs Material 有許多好用的小東西，可以幫助我們豐富網站內�
 
 - ### Reference
 
-將首頁index.md更改為自訂內容，檔案會放在`material/overrides/`目錄下面，詳細的操作方法可以參考[官網的手冊](https://squidfunk.github.io/mkdocs-material/reference/)：
+將首頁index.md更改為自訂內容，檔案會放在`material/overrides/`目錄下面，詳細的操作方法可以參考[這裡](https://squidfunk.github.io/mkdocs-material/reference/)。
 
 ```yaml
 ---
@@ -108,9 +108,11 @@ sequenceDiagram
     Component->>DOM: {{value}}
     Component->>DOM: [property] = "value"
     DOM->>Component: (Event) = "handler"
+    
     Component->>DOM: 雙向綁定
     DOM->>Component: [(ngModel)] = "Property"
 ```
+
 
 ---
 
@@ -127,7 +129,7 @@ Angular 有許多元件，這時使用grid cards 就可以直接導向目標頁�
 
     了解什麼是 Angular 元件。
 
-    [:octicons-arrow-right-24: Go to Page](#)
+    [:octicons-arrow-right-24: Go to Page](../component/component.md)
 
 -   :material-connection: __Service__
 
@@ -135,15 +137,15 @@ Angular 有許多元件，這時使用grid cards 就可以直接導向目標頁�
 
     了解服務的用法以及靜態注射的原理。
 
-    [:octicons-arrow-right-24: Go to Page](#)
+    [:octicons-arrow-right-24: Go to Page](../service/di.md)
 
--   :fontawesome-solid-hand-point-right: __Directive__
+-   :octicons-quote-16: __Directive__
 
     ---
 
     建立你自己的指令用於html元素上。
 
-    [:octicons-quote-16: Go to Page](#)
+    [:octicons-arrow-right-24: Go to Page](../directive/directive.md)
 
 -   :octicons-blocked-16: __Guard__
 
@@ -160,4 +162,4 @@ Angular 有許多元件，這時使用grid cards 就可以直接導向目標頁�
 ## Special thanks
 
 :rose: 將MK Docs網站部署到GitLab Page的方法，感謝日宏提供的[教學](https://test-zoxul-25825563df0f22bc52a20ee5150919645dc3ef0f19709d858ccf.gitlab.io/git/)。  
-:sunflower: 感謝Kim學長提供範例給我參考～
+:sunflower: 感謝Kim學長提供[範例](https://week-1-markdown-vian1113-988613423c571b6e909372a4c42f9b2b41b308.gitlab.io/)給我參考～

@@ -4,20 +4,17 @@
 
 ## 初始化Model的值
 
-因為不需要使用到FormsGroup來控制欄位，所以直接new一個物件就好。
+因為不需要使用到FormsGroup來控制欄位，所以直接new一個物件當作初始值就好。
 
-```ts hl_lines="4"
+```ts
 export class Page2Component {
   capacity=["5","10","15","20"];
   meetingRoom:MeetingRoom;
-
   constructor (){
     this.meetingRoom=new MeetingRoom(101,'taiwan',this.capacity[1],true,true);
   }
-
   // 控制項驗證
   submitted=false;
-
   onSubmit(form:NgForm){
     if(form.valid){
       this.submitted=true;
@@ -28,9 +25,9 @@ export class Page2Component {
 
 ## 表單元素設定
 
-ngForm是透過`#`來指向表單的欄位，表單用`#form="ngForm"`，欄位用`[(ngModel)]="meetingRoom.name" #input="ngModel"`來binding。
+ngForm是透過 ==#== 來指向表單的欄位，表單用`#form="ngForm"`，欄位用`[(ngModel)]="meetingRoom.name" #input="ngModel"`來binding。
 
-```html hl_lines="4"
+```html hl_lines="1 4"
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
         <label for="name">name</label>
@@ -58,26 +55,26 @@ ngForm是透過`#`來指向表單的欄位，表單用`#form="ngForm"`，欄位�
 ```
 
 ## 表單驗證
-### ngNativeValidate
-在元素內設定`ngNativeValidate`可以啟用ngForm預設的驗證提示，如下圖所示：
+### 1. ngNativeValidate
+在form元素內加上`ngNativeValidate`可以啟用ngForm預設的驗證提示，如下圖所示：
 
 ```html
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
 ```
 
 
-### 自訂驗證
+### 2. 自訂驗證
 
-通常template form的表單欄位如果想要加人一些自訂的驗證，會用[directive](#)來做，以檢查分機號碼為例：
+通常template form的表單欄位如果想要加人一些自訂的驗證，會用[directive](../directive/directive.md)來做，以檢查分機號碼為例：
 
-#### 建立directive
+#### a. 建立directive
 
 ```bash
 ng g d checkExtNo
 ```
-#### 加入provider
+#### b. 加入provider
 
-```ts title="check-ext-no.directive.ts" hl_lines="4-6"
+```ts title="check-ext-no.directive.ts" hl_lines="5-7"
 @Directive({
   selector: '[CheckExtNo]',
   providers:[
@@ -90,9 +87,9 @@ ng g d checkExtNo
 })
 ```
 
-#### 實作Validator介面
+#### c. 實作Validator介面
 
-```ts title="check-ext-no.directive.ts" hl_lines="4-6"
+```ts title="check-ext-no.directive.ts"
 export class CheckExtNoDirective {
   validate(control:AbstractControl):ValidationErrors | null{
     let extNo:number=parseInt(control.value);
@@ -111,9 +108,9 @@ export class CheckExtNoDirective {
 }
 ```
 
-#### 套用到HTML
+#### d. 套用到HTML
 
-```html hl_lines="3 7"
+```html
 <div class="form-group">
     <label for="size">分機號碼</label>
     <input type="text" class="form-control" placeholder="租借者的辦公室分機號碼" required name="extNo" pattern="[0-9]{4}" title="4個數字" [(ngModel)]="rentRoom.extNo" #extNo="ngModel" CheckExtNo>
